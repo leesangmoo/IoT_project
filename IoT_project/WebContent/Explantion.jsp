@@ -62,6 +62,11 @@ p {
     background:#ccc;
 
 }
+#work {
+	position: relative;
+	left: 921px; 
+	top:50px;
+}
 header #main_menu {
       height: 38px;
       margin-top: 15px;
@@ -111,7 +116,7 @@ header #main_menu {
 		window.history.back();
 	}
 </script>
-<title>학내 건물 조회</title>
+<title>부서 소개</title>
 </head>
 
 <body>
@@ -120,21 +125,16 @@ header #main_menu {
 
 <header>
 		<section id="top">
-         <h1>군산대학교 시설관리 페이지</h1>
+         <h1>군산대학교 시설과 주요업무</h1>
         </section>
 		
 		<nav id="main_menu">
          <ul>
-            <li><a href="BuildingList.jsp">건물 목록</a></li>
-            <li><a href="Explantion.jsp">부서 소개</a></li>
+           <li><a href="javascript:goBack();">뒤로 가기</a></li>
          </ul>
         </nav>
 </header>
-		
-		<div id = "img_tag">
-			 <img src="camlogo2.PNG" alt="이미지   없음"; width = "1057px"; height = "868px"; style="float:left"; margin-right = "50px";/>
-			 <img src="camlogo4.PNG" alt="이미지   없음"; width = "1040px"; height = "868px"; style="float:right"; margin-right = "50px";/>	
-	 	</div>
+	
 
     <div id="bottom"><br>
     안녕하세요 군산대학교 시설관리 페이지입니다.<br>
@@ -143,7 +143,22 @@ header #main_menu {
     </div>
 
 		</center>
-	
+<div id = "work">
+		<h1>시시설과 주요업무</h1>
+		<li>시설물 신축 및 증축 보수공사</li><br>
+		<li>시설예산 편성 및 집행계획 수립 </li><br>
+		<li>도시계획 및 인허가 업무 </li><br>
+		<li>시설환경 유지 및 보수 업무 </li><br>
+		<li>시설물 안전관리에 관한 업무 </li><br>
+		<li>연구실 안전관리 계획수립 및 추진 </li><br>
+		<li>조경 및 조경시설 유지관리</li><br>
+		<li>상하수도 관리 및 도시가스 관리 </li><br>
+		<li>냉난방 및 위생시설 유지관리 </li><br>
+		<li>전기, 소방, 기계설비 유지관리 </li><br>
+		<li>에너지 관리 업무 </li><br>
+		<li>학내 석면관리 업무 </li><br>
+		<li>시설통계 및 대학정보 공시제 업무 </li>
+	</div>	
 	
 </body>
 </html>
