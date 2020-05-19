@@ -67,7 +67,7 @@
 		<nav id="main_menu">
          <ul>
             <li><a href="BuildingList.jsp">건물 목록</a></li>
-            <li><a href="Explantion.jsp">부서 소개</a></li>
+            <li><a href="javascript:goBack();">뒤로 가기</a></li>
          </ul>
         </nav>
 </header>

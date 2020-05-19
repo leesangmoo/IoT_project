@@ -12,12 +12,29 @@
 	ArrayList<Building> BList = dbm.getBuildingList();
 	
 	dbm.disconnect();
+	
+	String building_name = request.getParameter("id");
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <link href="All.css" rel="stylesheet" type = "text/css">
+<style>
+table {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #444444;
+	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid #444444;
+	padding: 5px;
+	text-align : center;
+}
+</style>
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script location.href="./test?params="
@@ -50,16 +67,17 @@
 
 <body>
 	<form name='myform' action="db2.jsp" method="post">
+
 		<center>
 <header>
 		<section id="top">
-         <h1>군산대학교 시설관리 페이지</h1>
+         <h1>군산대학교 <%=building_name %> 시설보수 신청 현황</h1>
         </section>
 		
 		<nav id="main_menu">
          <ul>
            <li><a href="javascript:goBack();">뒤로 가기</a></li>
-            <li><a href="InsertBuilding.jsp">시설보수 신청</a></li>
+            <li><a href="apply.jsp">시설보수 신청</a></li>
          </ul>
         </nav>
 </header>
@@ -103,7 +121,6 @@
 				<%
 					}
 				%>
-					
 
 			</tbody>
 		</table>

@@ -18,6 +18,21 @@
 <html>
 <head>
 <link href="All.css" rel="stylesheet" type = "text/css">
+<style>
+table {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #444444;
+	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid #444444;
+	padding: 5px;
+	text-align : center;
+}
+</style>
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script location.href="./test?params="
@@ -53,7 +68,7 @@
 		<center>
 <header>
 		<section id="top">
-         <h1>군산대학교 시설관리 페이지</h1>
+         <h1>군산대학교 건물 목록</h1>
         </section>
 		
 		<nav id="main_menu">

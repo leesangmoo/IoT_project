@@ -6,90 +6,18 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
+<head> 
+<link href="All.css" rel="stylesheet" type = "text/css">
 <style>
-
-table {
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-	border: 1px solid #444444;
-	border-collapse: collapse;
-}
-
-th, td {
-	border: 1px solid #444444;
-	padding: 5px;
-	text-align : center;
-}
-</style>
-<style>
-p {
-	width: 100%;
-	height: 60px;
-	background: #87CEEB;
-	list-style: none;
-	padding-top: 15px
-}
-
-p {
-	float: center;
-	margin-right: 10px;
-}
-
-p {
-	font-size: 20px;
-	color: black;
-	font-weight: bold;
-	text-decoration: none;
-}
-#header {
-	margin-left: 3px;
-    position:absolute;
-    width:99%;
-    top : 0;
-}
-#bottom {
-	
-    position:absolute;
-
-    bottom:0;
-
-    width:2118px;
-
-    height:100px;   
-
-    background:#ccc;
-
-}
 #work {
 	width: 300px;
     margin: 0 auto;
 }
 
-header #main_menu {
-      height: 38px;
-      margin-top: 15px;
-      background-color: #4e4c4d;
-   }
-   header #main_menu ul {
-      padding-top: 9px;
-      text-align: center;
-   }
-   header #main_menu li {
-      display: inline;
-      margin: 40px;
-   }
-   header #main_menu a:link {
-      color:#ffffff;
-   }
-    header #main_menu a:visited {
-      color:#ffffff;
-   }
-    header #main_menu a:active {
-      color:#ffffff;
-   }
 </style>
+
+</head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script location.href="./test?params="
 	+encodeURI(params); 
@@ -144,7 +72,7 @@ header #main_menu {
 
 		</center>
 <div id = "work">
-		<h1>시시설과 주요업무</h1>
+		<h1 style = "font-size:35px">시설과 주요업무</h1>
 		<li>시설물 신축 및 증축 보수공사</li><br>
 		<li>시설예산 편성 및 집행계획 수립 </li><br>
 		<li>도시계획 및 인허가 업무 </li><br>

@@ -15,7 +15,7 @@
   }
   th, td {
     border: 1px solid #444444;
-    padding: 15px;
+    padding: 10px;
   }
 </style>
 
@@ -32,7 +32,7 @@
 			return false;
 		}
 		if (no == 1) {
-			document.myform.action = "b_insert_query.jsp";
+			document.myform.action = "b_insert_query2.jsp";
 		} else if (no == 2) {
 			document.myform.action = "test2.jsp";
 		} else if (no == 3) {
@@ -53,18 +53,17 @@
 </head>
 
 <body>
-	<form name='myform' action="DbSelect.jsp" method="post">
-	
+	<form name='myform' action="DbSelect.jsp" method="post" enctype="multipart/form-data">
+
 		<center>
 			<header>
 		<section id="top">
-         <h1>군산대학교 건물 등록 페이지</h1>
+         <h1>군산대학교 시설보수 신청 페이지</h1>
         </section>
 		
 		<nav id="main_menu">
          <ul>
             <li><a href="javascript:goBack();">뒤로 가기</a></li>
-            <li><a href="InsertBuilding.jsp">건물 등록</a></li>
          </ul>
         </nav>
 </header>
@@ -75,20 +74,30 @@
     (우)54150, 전라북도 군산시 대학로 558(미룡동) / TEL.063) 469-4113~4
  </div>
 			</center>
-	<br><br>
+	<br><br><br><br>
 		<table id="example" border="3px" style="margin-left: auto; margin-right: auto;">
 
 			<tr>
+				<th>시설명 </th>
+				<td><input type="text" name="sub_name" placeholder="입력" style="width:300px;height:30px;" /></td>
+			</tr>
 			<tr>
-				<th> 건물명 </th>
-				<td><input type="text" name="b_name" placeholder="입력" style="width:300px;height:30px;" /></td>
+				<th>내용 </th>
+				<td><input type="text" name="allText" placeholder="입력" style="width:300px;height:200px;" /></td>
+			</tr>
+			<tr>
+				<th>첨부파일 </th>
+				<td><input type="file"  name="file_f" accept="imge/jpg/png image/gif" style="width:300px;height:30px;"></td>
+			</tr>
+			<tr>
+				<th>신청자</th>
+				<td><input type="text" name="text_Human" placeholder="입력" style="width:300px;height:30px;" /></td>
 			</tr>
 			<tr>
 				<th>등록</th>
 				<td><button type="button" onclick="check(1)"style="width:304px;height:30px;">등록</button></td>
 			</tr>
 
-			</tr>
 		</table><br><br>
 		
 		
