@@ -77,6 +77,7 @@
 					<th>시설명</th>
 					<th>내용</th>
 					<th>신청자</th>
+					<th>상세보기</th>
 				</tr>
 			<tbody>
 				<%
@@ -87,7 +88,7 @@
 					<td><%= bd.getId() %></td>
 					<td><%= bd.getId() %></td>
 					<td><%= bd.getId() %></td>
-					
+					<td><%= bd.getId() %></td>
 					<%-- <td>
 						<button type="button"
 							onclick="location.href='Jsontest1.jsp?id=<%=dc.getId()%>'">Add</button>

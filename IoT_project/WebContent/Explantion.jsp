@@ -63,10 +63,10 @@ p {
 
 }
 #work {
-	position: relative;
-	left: 921px; 
-	top:50px;
+	width: 300px;
+    margin: 0 auto;
 }
+
 header #main_menu {
       height: 38px;
       margin-top: 15px;
