@@ -9,7 +9,7 @@
 
 	dbm.connect();
 
-	ArrayList<Building> dcList = dbm.getDeviceList();
+	ArrayList<Building> BList = dbm.getBuildingList();
 	
 	dbm.disconnect();
 %>
@@ -17,84 +17,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<style>
-table {
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-	border: 1px solid #444444;
-	border-collapse: collapse;
-}
-
-th, td {
-	border: 1px solid #444444;
-	padding: 5px;
-	text-align : center;
-}
-</style>
-<style>
-p {
-	width: 100%;
-	height: 60px;
-	background: #87CEEB;
-	list-style: none;
-	padding-top: 15px
-}
-
-p {
-	float: center;
-	margin-right: 10px
-}
-
-p {
-	font-size: 20px;
-	color: black;
-	font-weight: bold;
-	text-decoration: none
-}
-#header {
-	margin-left: 3px;
-    position:absolute;
-    width:99%;
-    top : 0;
-}
-#bottom {
-	
-    position:absolute;
-
-    bottom:0;
-
-    width:2118px;
-
-    height:100px;   
-
-    background:#ccc;
-
-}
-header #main_menu {
-      height: 38px;
-      margin-top: 15px;
-      background-color: #4e4c4d;
-   }
-header #main_menu ul {
-      padding-top: 9px;
-      text-align: center;
-   }
-header #main_menu li {
-      display: inline;
-      margin: 40px;
-   }
-header #main_menu a:link {
-      color:#ffffff;
-   }
-header #main_menu a:visited {
-      color:#ffffff;
-   }
-header #main_menu a:active {
-      color:#ffffff;
-   }
-   
-</style>
+<link href="All.css" rel="stylesheet" type = "text/css">
+</head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script location.href="./test?params="
 	+encodeURI(params); 
@@ -154,11 +78,11 @@ header #main_menu a:active {
 				</tr>
 			<tbody>
 				<%
-					for(int i=0; i<dcList.size(); i++) {
-						Building dc = dcList.get(i); 
+					for(int i=0; i<BList.size(); i++) {
+						Building bd = BList.get(i); 
 				%>
 				<tr>
-					<td><%= dc.getId() %></td>
+					<td><%= bd.getId() %></td>
 					<%-- <td>
 						<button type="button"
 							onclick="location.href='Jsontest1.jsp?id=<%=dc.getId()%>'">Add</button>
@@ -166,7 +90,7 @@ header #main_menu a:active {
 					--%>
 					<td>
 						<button type="button"
-							onclick="location.href='Detailp.jsp?id=<%=dc.getId()%>'">시설보수 신청 현황</button>
+							onclick="location.href='Detailp.jsp?id=<%=bd.getId()%>'">시설보수 신청 현황</button>
 					</td>
 				</tr>
 

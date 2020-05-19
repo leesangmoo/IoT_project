@@ -48,7 +48,7 @@ public class DataBase_Manager {
 		return true;
 	}
 
-	public ArrayList<Building> getDeviceList() {
+	public ArrayList<Building> getBuildingList() {
 		ArrayList<Building> devList = new ArrayList<Building>(); 
 		try {
 			ResultSet rs = null;
