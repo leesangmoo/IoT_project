@@ -59,7 +59,7 @@
 		<nav id="main_menu">
          <ul>
            <li><a href="javascript:goBack();">뒤로 가기</a></li>
-            <li><a href="InsertBuilding.jsp">건물 등록</a></li>
+            <li><a href="InsertBuilding.jsp">시설보수 신청</a></li>
          </ul>
         </nav>
 </header>
@@ -73,8 +73,10 @@
 		
 		<table id="tb1" width="100%" border="1">
 				<tr>
-					<th>건물명</th>
-					<th>시설보수 신청 현황</th>
+					<th>신청일</th>
+					<th>시설명</th>
+					<th>내용</th>
+					<th>신청자</th>
 				</tr>
 			<tbody>
 				<%
@@ -83,6 +85,9 @@
 				%>
 				<tr>
 					<td><%= bd.getId() %></td>
+					<td><%= bd.getId() %></td>
+					<td><%= bd.getId() %></td>
+					
 					<%-- <td>
 						<button type="button"
 							onclick="location.href='Jsontest1.jsp?id=<%=dc.getId()%>'">Add</button>
@@ -90,7 +95,7 @@
 					--%>
 					<td>
 						<button type="button"
-							onclick="location.href='Status.jsp?id=<%=bd.getId()%>'">시설보수 신청 현황</button>
+							onclick="location.href='Detail.jsp?id=<%=bd.getId()%>'" target = "_blank" width = " 600px";>상세보기</button>
 					</td>
 				</tr>
 
