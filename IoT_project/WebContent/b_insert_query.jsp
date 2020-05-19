@@ -21,11 +21,7 @@
   }
  
 </style>
-<style>
-	p{width:1700px;height:60px;background:orange;list-style:none;padding-top:15px}
-		p{float:center;margin-right:10px}					
-	p{font-size:20px;color:black;font-weight:bold;text-decoration:none}	
-</style>
+
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"
 	type="text/javascript"></script>
@@ -61,6 +57,7 @@
 <center>
 <header>
 		<section id="top">
+		<img src="camlogo.PNG" width="100px" height="70px" align="left">
          <h1>군산대학교 시설관리 페이지</h1>
         </section>
 		

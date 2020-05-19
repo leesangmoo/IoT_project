@@ -62,6 +62,7 @@ th, td {
 	<center>
 	<header>
 		<section id="top">
+		<img src="camlogo.PNG" width="100px" height="70px" align="left">
          <h1>군산대학교 시설보수 신청 상세보기</h1>
         </section>
 		

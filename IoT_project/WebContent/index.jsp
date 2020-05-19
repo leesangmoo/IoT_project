@@ -40,12 +40,17 @@
 </head>
 
 <body>
+
 	<form name='myform' action="db2.jsp" method="post">
 		<center>	
 
 <header>
+	
 		<section id="top">
+	<img src="camlogo.PNG" width="100px" height="70px" align="left" padding = "0px" margin = "0px">	
+	 
          <h1>군산대학교 시설관리 페이지</h1>
+        
         </section>
 		
 		<nav id="main_menu">

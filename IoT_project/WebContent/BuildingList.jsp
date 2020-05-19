@@ -68,6 +68,7 @@ th, td {
 		<center>
 <header>
 		<section id="top">
+		<img src="camlogo.PNG" width="100px" height="70px" align="left">
          <h1>군산대학교 건물 목록</h1>
         </section>
 		

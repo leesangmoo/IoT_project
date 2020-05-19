@@ -58,13 +58,13 @@
 		<center>
 			<header>
 		<section id="top">
+		<img src="camlogo.PNG" width="100px" height="70px" align="left">
          <h1>군산대학교 건물 등록 페이지</h1>
         </section>
 		
 		<nav id="main_menu">
          <ul>
             <li><a href="javascript:goBack();">뒤로 가기</a></li>
-            <li><a href="InsertBuilding.jsp">건물 등록</a></li>
          </ul>
         </nav>
 </header>
