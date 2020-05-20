@@ -27,7 +27,6 @@
 	function check(no) {
 		if (myform.b_name.value == "") {
 			alert("값을 입력해 주세요");
-
 			myform.b_name.focus();
 			return false;
 		}
