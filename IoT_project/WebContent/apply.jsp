@@ -92,7 +92,7 @@
 			</tr>
 			<tr>
 				<th>신청자</th>
-				<td><input type="text" name="text_Human" placeholder="입력" style="width:300px;height:30px;" /></td>
+				<td><input type="text" name="text_Human" placeholder="입력" style="width:300px;height:30px;"/></td>
 			</tr>
 			<tr>
 				<th>등록</th>
