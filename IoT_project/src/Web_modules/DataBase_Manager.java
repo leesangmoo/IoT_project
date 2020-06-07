@@ -73,7 +73,7 @@ public class DataBase_Manager {
 		return devList;
 	}
 	
-	public Building getDeviceCommon(String building_name) {
+	public Building getbuilding(String building_name) {
 		Building dc = new Building(); 
 		try {
 			ResultSet rs = null;

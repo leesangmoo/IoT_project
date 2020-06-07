@@ -97,6 +97,7 @@ th, td {
 					<th>내용</th>
 					<th>날짜</th>
 					<th>상세보기</th>
+					<th>삭제</th>
 				</tr>
 			<tbody>
 				<%
@@ -116,6 +117,10 @@ th, td {
 					<td>
 						<button type="button"
 							onclick="location.href='Detail.jsp?id=<%=ap.gethuman_name()%>'" target = "_blank" width = " 600px";>상세보기</button>
+					</td>
+					<td>
+						<button type="button"
+							onclick="location.href='delete.jsp?id=<%=ap.gethuman_name()%>'" target = "_blank" width = " 600px";>삭제</button>
 					</td>
 				</tr>
 

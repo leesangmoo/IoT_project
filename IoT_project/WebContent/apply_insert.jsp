@@ -55,6 +55,7 @@
         function goBack(){
         window.history.back();
         	}
+        window.location.replace("Status.jsp");
     </script>
 </head>
 

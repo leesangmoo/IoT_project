@@ -49,6 +49,7 @@
         function goBack(){
         window.history.back();
         	}
+        window.location.replace("BuildingList.jsp");
     </script>
 </head>
 

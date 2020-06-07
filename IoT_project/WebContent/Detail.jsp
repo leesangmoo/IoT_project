@@ -83,19 +83,19 @@ th, td {
 			<tr>
 				<th>신청자</th>
 				<td> 
-				<input type="text" class="no-border" id="id" name="id" value="<%= dc.gethuman_name() %>" style = "text-align : center;"></td>
+				<input type="text" class="no-border" id="human_name" name="human_name" value="<%= dc.gethuman_name() %>" style = "text-align : center;"></td>
 			</tr>
 			<tr>
 				<th>날짜</th>
-				<td><input type="text" class="no-border" id="device_type" name="device_type" value="<%= dc.gettime_s() %>" style = "text-align : center;"></td>
+				<td><input type="text" class="no-border" id="time_s" name="time_s" value="<%= dc.gettime_s() %>" style = "text-align : center;"></td>
 			</tr>
 			<tr>
 				<th>시설명</th>
-				<td><input type="text" class="no-border" id="category" name="category" value="<%= dc.getbuilding_sub_name() %>" style = "text-align : center;"></td>
+				<td><input type="text" class="no-border" id="building_sub_name" name="building_sub_name" value="<%= dc.getbuilding_sub_name() %>" style = "text-align : center;"></td>
 			</tr>
 			<tr>
 				<th>신청내용</th>
-				<td><input type="text" class="no-border" id="category" name="category" value="<%= dc.getext() %>" style = "text-align : center; width:300px; height:100px;"></td>
+				<td><input type="text" class="no-border" id="text" name="text" value="<%= dc.getext() %>" style = "text-align : center; width:300px; height:100px;"></td>
 			</tr>
 			<tr>
 				<th>첨부파일</th>
