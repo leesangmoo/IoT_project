@@ -25,24 +25,23 @@
 	type="text/javascript"></script>
 <script type="text/javascript">
 	function check(no) {
-		if (myform.b_name.value == "") {
+		if (myform2.text_Human.value == "") {
 			alert("값을 입력해 주세요");
-
-			myform.b_name.focus();
+			myform2.text_Human.focus();
 			return false;
 		}
 		if (no == 1) {
-			document.myform.action = "b_insert_query2.jsp";
+			document.myform2.action = "apply_insert.jsp";
 		} else if (no == 2) {
-			document.myform.action = "test2.jsp";
+			document.myform2.action = "test2.jsp";
 		} else if (no == 3) {
-			document.myform.action = "db3.jsp";
+			document.myform2.action = "db3.jsp";
 		} else if (no == 4) {
-			document.myform.action = "db4.jsp";
+			document.myform2.action = "db4.jsp";
 		} else {
 			return;
 		}
-		document.myform.submit();
+		document.myform2.submit();
 	}
 </script>
  <script type="text/javascript">   
@@ -53,7 +52,7 @@
 </head>
 
 <body>
-	<form name='myform' action="DbSelect.jsp" method="post" enctype="multipart/form-data">
+	<form name='myform2' action="apply_insert.jsp" method="post" enctype="multipart/form-data">
 
 		<center>
 			<header>
@@ -79,6 +78,10 @@
 		<table id="example" border="3px" style="margin-left: auto; margin-right: auto;">
 
 			<tr>
+				<th>신청자</th>
+				<td><input type="text" name="text_Human" placeholder="입력" style="width:300px;height:30px;"/></td>
+			</tr>
+			<tr>
 				<th>시설명 </th>
 				<td><input type="text" name="sub_name" placeholder="입력" style="width:300px;height:30px;" /></td>
 			</tr>
@@ -88,15 +91,11 @@
 			</tr>
 			<tr>
 				<th>첨부파일 </th>
-				<td><input type="file"  name="file_f" accept="imge/jpg/png image/gif" style="width:300px;height:30px;"></td>
-			</tr>
-			<tr>
-				<th>신청자</th>
-				<td><input type="text" name="text_Human" placeholder="입력" style="width:300px;height:30px;"/></td>
+				<td><input type="file"  name="save" accept="image/jepg,image/png,image/gif" style="width:300px;height:30px;"></td>
 			</tr>
 			<tr>
 				<th>등록</th>
-				<td><button type="button" onclick="check(1)"style="width:304px;height:30px;">등록</button></td>
+				<td><button type="submit" style="width:304px;height:30px;">등록</button></td>
 			</tr>
 
 		</table><br><br>

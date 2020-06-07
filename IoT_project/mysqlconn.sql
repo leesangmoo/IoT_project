@@ -5,6 +5,17 @@ create table building_register(
 );
 
 
-DROP TABLE building_register
+create table apply_table(
+	human_name varchar(50),
+	time_s datetime,
+	building_sub_name varchar(50),
+	text varchar(50),
+	sysname varchar(100) default 'default.jpg',
+	orgname varchar(100) default 'default.jpg'
+);
 
-DESC building_register
+DROP TABLE apply_table
+
+DESC apply_table
+
+show table;

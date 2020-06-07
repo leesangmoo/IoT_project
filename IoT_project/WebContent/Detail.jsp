@@ -10,16 +10,14 @@
 	type="text/javascript"></script>
     
 <%
-	String device_id = (String)request.getParameter("id");
-
-	DataBase_Manager dbm = new DataBase_Manager();
-	dbm.connect();
-	Building dc = dbm.getDeviceCommon(device_id);
-	dbm.disconnect();
+	String human_name2 = (String)request.getParameter("id");
+    
+	Database_Manager2 dbm2 = new Database_Manager2();
+	dbm2.connect();
+	apply dc = dbm2.getapply_s(human_name2);
+	dbm2.disconnect();
+	//String path2 = "C:/Users/Dsem/Desktop/IoT_project_workspace/IoT_project/IoT_project/WebContent/save";
 	
-	//String id_json = (String)request.getParameter("ID");
-	//String key0 = (String)request.getParameter("key0");
-	//String value0 = (String)request.getParameter("value0");
 %>
     
 <html>
@@ -58,7 +56,7 @@ th, td {
 
 
 <body>
-<form name='myform6' action="ReviseFile.jsp" method="POST">
+<form name='myform6' action="ReviseFile.jsp" method="POST" enctype="multipart/form-data">
 	<center>
 	<header>
 		<section id="top">
@@ -83,29 +81,25 @@ th, td {
 	<h1>상세보기</h1>
 	<table name="tb1" id="tb1" width="100%" border="1">
 			<tr>
-				<th>날짜</th>
-				<td> 
-				<input type="text" class="no-border" id="id" name="id" value="" style = "text-align : center;"></td>
-			</tr>
-			<tr>
 				<th>신청자</th>
-				<td><input type="text" class="no-border" id="device_type" name="device_type" value="" style = "text-align : center;"></td>
+				<td> 
+				<input type="text" class="no-border" id="id" name="id" value="<%= dc.gethuman_name() %>" style = "text-align : center;"></td>
 			</tr>
 			<tr>
-				<th>건물명</th>
-				<td><input type="text" class="no-border" id="manufacturer" name="manufacturer" value="<%= dc.getId() %>" style = "text-align : center;"></td>
+				<th>날짜</th>
+				<td><input type="text" class="no-border" id="device_type" name="device_type" value="<%= dc.gettime_s() %>" style = "text-align : center;"></td>
 			</tr>
 			<tr>
 				<th>시설명</th>
-				<td><input type="text" class="no-border" id="category" name="category" value="" style = "text-align : center;"></td>
+				<td><input type="text" class="no-border" id="category" name="category" value="<%= dc.getbuilding_sub_name() %>" style = "text-align : center;"></td>
 			</tr>
 			<tr>
 				<th>신청내용</th>
-				<td><input type="text" class="no-border" id="category" name="category" value="" style = "text-align : center; width:300px; height:100px;"></td>
+				<td><input type="text" class="no-border" id="category" name="category" value="<%= dc.getext() %>" style = "text-align : center; width:300px; height:100px;"></td>
 			</tr>
 			<tr>
 				<th>첨부파일</th>
-				<td><input type="text" class="no-border" id="category" name="category" value="" style = "text-align : center; width:300px; height:300px;" ></td>
+				<td><img src="./save/<%= dc.getsysname() %>" style = "text-align : center; width:300px; height:300px;" ></td>
 			</tr>
 			
 	</table>

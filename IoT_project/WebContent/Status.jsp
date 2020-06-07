@@ -5,13 +5,13 @@
 
 
 <%
-	DataBase_Manager dbm = new DataBase_Manager();
+	Database_Manager2 dbm2 = new Database_Manager2();
 
-	dbm.connect();
+	dbm2.connect();
 
-	ArrayList<Building> BList = dbm.getBuildingList();
+	ArrayList<apply> AList = dbm2.getapplyList();
 	
-	dbm.disconnect();
+	dbm2.disconnect();
 	
 	String building_name = request.getParameter("id");
 %>
@@ -92,22 +92,22 @@ th, td {
 		
 		<table id="tb1" width="100%" border="1">
 				<tr>
-					<th>신청일</th>
+					<th>신청자</th>
 					<th>시설명</th>
 					<th>내용</th>
-					<th>신청자</th>
+					<th>날짜</th>
 					<th>상세보기</th>
 				</tr>
 			<tbody>
 				<%
-					for(int i=0; i<BList.size(); i++) {
-						Building bd = BList.get(i); 
+					for(int i=0; i<AList.size(); i++) {
+						apply ap = AList.get(i); 
 				%>
 				<tr>
-					<td><%= bd.getId() %></td>
-					<td><%= bd.getId() %></td>
-					<td><%= bd.getId() %></td>
-					<td><%= bd.getId() %></td>
+					<td><%= ap.gethuman_name() %></td>					
+					<td><%= ap.getbuilding_sub_name() %></td>
+					<td><%= ap.getext() %></td>
+					<td><%= ap.gettime_s() %></td>
 					<%-- <td>
 						<button type="button"
 							onclick="location.href='Jsontest1.jsp?id=<%=dc.getId()%>'">Add</button>
@@ -115,7 +115,7 @@ th, td {
 					--%>
 					<td>
 						<button type="button"
-							onclick="location.href='Detail.jsp?id=<%=bd.getId()%>'" target = "_blank" width = " 600px";>상세보기</button>
+							onclick="location.href='Detail.jsp?id=<%=ap.gethuman_name()%>'" target = "_blank" width = " 600px";>상세보기</button>
 					</td>
 				</tr>
 
