@@ -74,7 +74,7 @@ public class DataBase_Manager {
 	}
 	
 	public Building getbuilding(String building_name) {
-		Building dc = new Building(); 
+		Building bl = new Building(); 
 		try {
 			ResultSet rs = null;
 			String sql = "select building_name from building_register"
@@ -86,8 +86,8 @@ public class DataBase_Manager {
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				dc.setId(rs.getString(1));
-				System.out.println(dc.toString());
+				bl.setId(rs.getString(1));
+				System.out.println(bl.toString());
 			}
 			rs.close();
 			pstmt.close();
@@ -95,7 +95,7 @@ public class DataBase_Manager {
 			System.out.println(e.getMessage());
 		}
 		
-		return dc;
+		return bl;
 	}
 	
 }

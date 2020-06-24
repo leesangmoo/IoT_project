@@ -47,27 +47,28 @@ public class Database_Manager2 {
 		return true;
 	}
 
-	public ArrayList<apply>getapplyList() {
-		ArrayList<apply> devList = new ArrayList<apply>(); 
+	public ArrayList<apply>getapplyList(String building_name) {
+		ArrayList<apply> b_List = new ArrayList<apply>(); 
 		try {
 			ResultSet rs = null;
-			String sql = "select human_name, time_s, building_sub_name, text,"
-						+ "sysname, orgname from apply_table";
+			String sql = "select human_name, time_s, building_name, building_sub_name, text,"
+						+ "sysname, orgname from apply_table where  building_name = '" + building_name+ "';";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				apply dc = new apply();
-				dc.sethuman_name(rs.getString(1));
-				dc.settime_s(rs.getString(2));
-				dc.setbuilding_sub_name(rs.getString(3));
-				dc.settext(rs.getString(4));
-				dc.setsysname(rs.getString(5));
-				dc.setorgname(rs.getString(6));
+				apply bl = new apply();
+				bl.sethuman_name(rs.getString(1));
+				bl.settime_s(rs.getString(2));
+				bl.setbuilding_name(rs.getString(3));
+				bl.setbuilding_sub_name(rs.getString(4));
+				bl.settext(rs.getString(5));
+				bl.setsysname(rs.getString(6));
+				bl.setorgname(rs.getString(7));
 				
-				System.out.println(dc.toString());
+				System.out.println(bl.toString());
 				
-				devList.add(dc);
+				b_List.add(bl);
 			}
 			rs.close();
 			pstmt.close();
@@ -75,14 +76,14 @@ public class Database_Manager2 {
 			System.out.println(e.getMessage());
 		}
 		
-		return devList;
+		return b_List;
 	}
 	
 	public apply getapply_s(String human_name) {
-		apply dc = new apply(); 
+		apply bl = new apply(); 
 		try {
 			ResultSet rs = null;
-			String sql = "select human_name, time_s, building_sub_name, text,"
+			String sql = "select human_name, time_s, building_name, building_sub_name, text,"
 						+ "sysname, orgname from apply_table"
 						+ " where human_name = '" + human_name+ "';";
 			
@@ -92,12 +93,44 @@ public class Database_Manager2 {
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
+				bl.sethuman_name(rs.getString(1));
+				bl.settime_s(rs.getString(2));
+				bl.setbuilding_name(rs.getString(3));
+				bl.setbuilding_sub_name(rs.getString(4));
+				bl.settext(rs.getString(5));
+				bl.setsysname(rs.getString(6));
+				bl.setorgname(rs.getString(7));
+				System.out.println(bl.toString());
+			}
+			rs.close();
+			pstmt.close();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return bl;
+	}
+	public apply getapply_s2(String building_name) {
+		apply dc = new apply(); 
+		try {
+			ResultSet rs = null;
+			String sql = "select human_name, time_s, building_name, building_sub_name, text,"
+						+ "sysname, orgname from apply_table"
+						+ " where building_name = '" + building_name+ "';";
+			
+			System.out.println(sql);
+			
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
 				dc.sethuman_name(rs.getString(1));
 				dc.settime_s(rs.getString(2));
-				dc.setbuilding_sub_name(rs.getString(3));
-				dc.settext(rs.getString(4));
-				dc.setsysname(rs.getString(5));
-				dc.setorgname(rs.getString(6));
+				dc.setbuilding_name(rs.getString(3));
+				dc.setbuilding_sub_name(rs.getString(4));
+				dc.settext(rs.getString(5));
+				dc.setsysname(rs.getString(6));
+				dc.setorgname(rs.getString(7));
 				System.out.println(dc.toString());
 			}
 			rs.close();
@@ -108,5 +141,4 @@ public class Database_Manager2 {
 		
 		return dc;
 	}
-	
 }

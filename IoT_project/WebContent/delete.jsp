@@ -63,21 +63,23 @@ p {
 </script>
 
 <title>삭제 m_delete.jsp</title>
- <script type="text/javascript">   
-        function goBack(){
-        window.history.back();
-        	}
-        window.location.replace("Status.jsp");
-    </script>
+<script type="text/javascript">
+	function goBack() {
+		window.history.back();
+	}
+	window.location.replace("BuildingList.jsp");
+</script>
 </head>
 
 <body>
 	<form name='myform' action="DbSelect.jsp" method="get">
 		<center>
 			<p>
-				<caption>테이블 삭제 </caption><br>
+				<caption>테이블 삭제</caption>
+				<br>
 				<button type="button" class="back" onclick="goBack()">뒤로가기</button>
-				<button type="button" onclick="location.href='DbSelect.jsp'">디바이스 목록 보기</button>
+				<button type="button" onclick="location.href='DbSelect.jsp'">디바이스
+					목록 보기</button>
 			</p>
 		</center>
 		<%

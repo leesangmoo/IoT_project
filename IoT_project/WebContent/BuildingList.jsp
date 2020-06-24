@@ -17,7 +17,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link href="All.css" rel="stylesheet" type = "text/css">
+<link href="All.css" rel="stylesheet" type="text/css">
 <style>
 table {
 	width: 80%;
@@ -30,7 +30,7 @@ table {
 th, td {
 	border: 1px solid #444444;
 	padding: 5px;
-	text-align : center;
+	text-align: center;
 }
 </style>
 </head>
@@ -66,32 +66,27 @@ th, td {
 <body>
 	<form name='myform' action="db2.jsp" method="post">
 		<center>
-<header>
-		<section id="top">
-		<img src="camlogo.PNG" width="100px" height="70px" align="left">
-         <h1>군산대학교 건물 목록</h1>
-        </section>
-		
-		<nav id="main_menu">
-         <ul>
-           <li><a href="javascript:goBack();">뒤로 가기</a></li>
-            <li><a href="InsertBuilding.jsp">건물 등록</a></li>
-         </ul>
-        </nav>
-</header>
+			<header> <section id="top"> <img src="camlogo.PNG"
+				width="100px" height="70px" align="left">
+			<h1>군산대학교 건물 목록</h1>
+			</section> <nav id="main_menu">
+			<ul>
+				<li><a href="javascript:goBack();">뒤로 가기</a></li>
+				<li><a href="InsertBuilding.jsp">건물 등록</a></li>
+			</ul>
+			</nav> </header>
 
- <div id="bottom"><br>
-    안녕하세요 군산대학교 시설관리 페이지입니다.<br>
-    시설보수팀 번호 : 010-7713-5605<br>
-    (우)54150, 전라북도 군산시 대학로 558(미룡동) / TEL.063) 469-4113~4
- </div>
+			<div id="bottom">
+				<br> 안녕하세요 군산대학교 시설관리 페이지입니다.<br> 시설보수팀 번호 : 010-7713-5605<br>
+				(우)54150, 전라북도 군산시 대학로 558(미룡동) / TEL.063) 469-4113~4
+			</div>
 		</center>
-		
+
 		<table id="tb1" width="100%" border="1">
-				<tr>
-					<th>건물명</th>
-					<th>시설보수 신청 현황</th>
-				</tr>
+			<tr>
+				<th>건물명</th>
+				<th>시설보수 신청 현황</th>
+			</tr>
 			<tbody>
 				<%
 					for(int i=0; i<BList.size(); i++) {
@@ -106,17 +101,18 @@ th, td {
 					--%>
 					<td>
 						<button type="button"
-							onclick="location.href='Status.jsp?id=<%=bd.getId()%>'">시설보수 신청 현황</button>
+							onclick="location.href='Status.jsp?id=<%=bd.getId()%>'">시설보수
+							신청 현황</button>
 					</td>
 				</tr>
 
 				<%
 					}
 				%>
-					
+
 
 			</tbody>
 		</table>
-		</form>
+	</form>
 </body>
 </html>

@@ -3,18 +3,20 @@ package DataBase_structure;
 public class apply {
 	private String human_name;
 	private String time_s;
+	private String building_name;
 	private String building_sub_name;
 	private String text;
 	private String sysname;
 	private String orgname;
 
 	public apply() {
-		this("","","","","","");
+		this("","","","","","","");
 	}
 	
-	public apply(String human_name, String time_s,  String building_sub_name, String text, String sysname,String orgname) {
+	public apply(String human_name, String time_s,String building_name,String building_sub_name, String text, String sysname,String orgname) {
 		this.human_name = human_name;
 		this.time_s = time_s;
+		this.building_name = building_name;
 		this.building_sub_name = building_sub_name;
 		this.text = text;
 		this.sysname = sysname;
@@ -34,6 +36,13 @@ public class apply {
 
 	public void settime_s(String time_s) {
 		this.time_s = time_s;
+	}
+	public String getbuilding_name() {
+		return building_name;
+	}
+
+	public void setbuilding_name(String building_name) {
+		this.building_name = building_name;
 	}
 	
 	public String getbuilding_sub_name() {
@@ -69,7 +78,7 @@ public class apply {
 	}
 	
 	public String toString() {
-		return this.human_name + " / " + this.time_s + " / " + this.building_sub_name + " / " + this.text + " / " + this.sysname + " / " 
+		return this.human_name + " / " + this.time_s + " / " + this.building_name + " / "  + this.building_sub_name + " / " + this.text + " / " + this.sysname + " / " 
 				+ this.orgname + " / ";
 	}
 	
