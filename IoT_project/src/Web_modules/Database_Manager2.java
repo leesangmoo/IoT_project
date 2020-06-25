@@ -49,12 +49,13 @@ public class Database_Manager2 {
 
 	public ArrayList<apply>getapplyList(String building_name) {
 		ArrayList<apply> b_List = new ArrayList<apply>(); 
+		//ArrayList로 리턴 해주기 위함
 		try {
 			ResultSet rs = null;
 			String sql = "select human_name, time_s, building_name, building_sub_name, text,"
 						+ "sysname, orgname from apply_table where  building_name = '" + building_name+ "';";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-
+			//parent 빌딩 이름으로 외래키를 받아옴
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				apply bl = new apply();
@@ -111,7 +112,7 @@ public class Database_Manager2 {
 		return bl;
 	}
 	public apply getapply_s2(String building_name) {
-		apply dc = new apply(); 
+		apply ap = new apply(); 
 		try {
 			ResultSet rs = null;
 			String sql = "select human_name, time_s, building_name, building_sub_name, text,"
@@ -124,14 +125,14 @@ public class Database_Manager2 {
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				dc.sethuman_name(rs.getString(1));
-				dc.settime_s(rs.getString(2));
-				dc.setbuilding_name(rs.getString(3));
-				dc.setbuilding_sub_name(rs.getString(4));
-				dc.settext(rs.getString(5));
-				dc.setsysname(rs.getString(6));
-				dc.setorgname(rs.getString(7));
-				System.out.println(dc.toString());
+				ap.sethuman_name(rs.getString(1));
+				ap.settime_s(rs.getString(2));
+				ap.setbuilding_name(rs.getString(3));
+				ap.setbuilding_sub_name(rs.getString(4));
+				ap.settext(rs.getString(5));
+				ap.setsysname(rs.getString(6));
+				ap.setorgname(rs.getString(7));
+				System.out.println(ap.toString());
 			}
 			rs.close();
 			pstmt.close();
@@ -139,6 +140,6 @@ public class Database_Manager2 {
 			System.out.println(e.getMessage());
 		}
 		
-		return dc;
+		return ap;
 	}
 }

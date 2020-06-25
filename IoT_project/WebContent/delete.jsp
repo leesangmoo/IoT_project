@@ -78,13 +78,12 @@ p {
 				<caption>테이블 삭제</caption>
 				<br>
 				<button type="button" class="back" onclick="goBack()">뒤로가기</button>
-				<button type="button" onclick="location.href='DbSelect.jsp'">디바이스
-					목록 보기</button>
+			
 			</p>
 		</center>
 		<%
 			String send_id = request.getParameter("id");
-			System.out.println(send_id + " <-- 해당 id 삭제 ");
+			//해당  신청자 이름 값을  받아옴
 			request.setCharacterEncoding("utf-8");
 			Connection conn = null;
 			PreparedStatement pstmt = null;
@@ -94,6 +93,7 @@ p {
 				String dbUser = "jspid";
 				String dbPass = "jsppass";
 				conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
+				//삭제 delete 쿼리 문 
 				pstmt = conn.prepareStatement("DELETE FROM apply_table WHERE human_name=?");
 				pstmt.setString(1, send_id);
 				pstmt.executeUpdate();

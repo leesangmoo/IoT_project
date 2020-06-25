@@ -75,8 +75,9 @@
  </div>
 			</center>
 	<br><br><br><br>
-		<table id="example" border="3px" style="margin-left: auto; margin-right: auto;">
-
+	
+	<!-- 시설보수 신청 입력 칸 -->
+		<table  border="3px" style="margin-left: auto; margin-right: auto;">
 			<tr>
 				<th>신청자</th>
 				<td><input type="text" name="text_Human" placeholder="입력" style="width:300px;height:30px;"/></td>
@@ -101,8 +102,9 @@
 				<th>등록</th>
 				<td><button type="submit" style="width:304px;height:30px;">등록</button></td>
 			</tr>
-
-		</table><br><br>
+		</table>
+		
+		<br><br>
 		
 		
 	</form>

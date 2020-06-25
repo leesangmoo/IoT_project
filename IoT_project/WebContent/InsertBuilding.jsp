@@ -25,19 +25,20 @@ th, td {
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"
 	type="text/javascript"></script>
 <script type="text/javascript">
-	function check(no) {
+	function check(n) { //페이지 이동 함수
+		//입력 값이 없으면 예외 처리
 		if (myform.b_name.value == "") {
 			alert("값을 입력해 주세요");
 			myform.b_name.focus();
 			return false;
 		}
-		if (no == 1) {
+		if (n == 1) { //값에 따라서 페이지 이동
 			document.myform.action = "b_insert_query.jsp";
-		} else if (no == 2) {
+		} else if (n == 2) {
 			document.myform.action = "test2.jsp";
-		} else if (no == 3) {
+		} else if (n == 3) {
 			document.myform.action = "db3.jsp";
-		} else if (no == 4) {
+		} else if (n == 4) {
 			document.myform.action = "db4.jsp";
 		} else {
 			return;
@@ -76,10 +77,11 @@ th, td {
 		</center>
 		<br>
 		<br>
-		<table id="example" border="3px"
+		
+		<!-- 입력 할 테이블 만들기 -->
+		<table border="3px"
 			style="margin-left: auto; margin-right: auto;">
 
-			<tr>
 			<tr>
 				<th>건물명</th>
 				<td><input type="text" name="b_name" placeholder="입력"
@@ -87,11 +89,10 @@ th, td {
 			</tr>
 			<tr>
 				<th>등록</th>
-				<td><button type="button" onclick="check(1)"
+				<td><button type="button" onclick="check(1)" 
 						style="width: 304px; height: 30px;">등록</button></td>
 			</tr>
 
-			</tr>
 		</table>
 		<br>
 		<br>

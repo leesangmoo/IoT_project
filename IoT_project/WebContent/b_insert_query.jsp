@@ -80,7 +80,8 @@ th, td {
 
 <%
 	request.setCharacterEncoding("UTF-8");
-
+	
+	//건물명 입력 값을 가져옴
 	String building_name = request.getParameter("b_name");
 	
   	Connection conn=null;
@@ -96,11 +97,10 @@ th, td {
         Class.forName( "com.mysql.jdbc.Driver");
         conn=DriverManager.getConnection(jdbcUrl,dbId ,dbPass );
         
+        //insert 쿼리문
         String sql = "insert into building_register (building_name) values (?)";
         pstmt = conn.prepareStatement(sql);
-        
         pstmt.setString(1, building_name);
-        
         pstmt.executeUpdate();
         
            out.println("----------------------------------->>> 건물 등록 완료");

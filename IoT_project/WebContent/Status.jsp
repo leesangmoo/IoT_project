@@ -73,7 +73,7 @@ th, td {
 		<center>
 			<header> <section id="top"> <img src="camlogo.PNG"
 				width="100px" height="70px" align="left">
-			<h1>군산대학교 시설보수 신청 현황</h1>
+			<h1>군산대학교 <%=building_name %> 시설보수 신청 현황</h1>
 			</section> <nav id="main_menu">
 			<ul>
 				<li><a href="javascript:goBack();">뒤로 가기</a></li>
@@ -97,26 +97,23 @@ th, td {
 				<th>삭제</th>
 			</tr>
 			<tbody>
-				<%
+				<% 
 					for(int i=0; i<AList.size(); i++) {
-						apply ap = AList.get(i); 
+						apply ap = AList.get(i); //AList에 담긴 값을 받아옴 
 				%>
 				<tr>
 					<td><%= ap.gethuman_name() %></td>
 					<td><%= ap.getbuilding_sub_name() %></td>
 					<td><%= ap.getext() %></td>
 					<td><%= ap.gettime_s() %></td>
-					<%-- <td>
-						<button type="button"
-							onclick="location.href='Jsontest1.jsp?id=<%=dc.getId()%>'">Add</button>
-					</td>
-					--%>
 					<td>
+					<!-- 상세보기 페이지를 위한 신청자 이름으로 검색 -->
 						<button type="button"
 							onclick="location.href='Detail.jsp?id=<%=ap.gethuman_name()%>'"
 							target="_blank" width=" 600px";>상세보기</button>
 					</td>
 					<td>
+					<!-- 시설보수 신청자 이름으로 테이블 삭제-->
 						<button type="button"
 							onclick="location.href='delete.jsp?id=<%=ap.gethuman_name()%>'"
 							target="_blank" width=" 600px";>삭제</button>

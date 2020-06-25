@@ -95,6 +95,7 @@ th, td {
 	String enc = "UTF-8";
 	DefaultFileRenamePolicy dp = new DefaultFileRenamePolicy(); 
 	
+	//시간 자동 저장
 	Timestamp time_s = new Timestamp(System.currentTimeMillis());
 	
 	MultipartRequest multi = null;
@@ -105,13 +106,15 @@ th, td {
 
   try{
 	  String path2 = "C:/Users/Dsem/Desktop/IoT_project_workspace/IoT_project/IoT_project/WebContent/save";
+	  
+	  //이미지를 저장하기 위함
 	  multi = new MultipartRequest(request,path2,maxSize,enc,dp);
 	  String human_name = multi.getParameter("text_Human");
 	  String buildingName = multi.getParameter("building_name");
 	  String building_sub_name = multi.getParameter("sub_name");
 	  String text = multi.getParameter("allText");
-	  String sysName = multi.getFilesystemName("save");
-	  String orgName = multi.getOriginalFileName("save");
+	  String sysName = multi.getFilesystemName("save"); //이미지 파일 경로
+	  String orgName = multi.getOriginalFileName("save"); //이미지 파일 경로
 	  String type = multi.getContentType("save");
 	  type = type.split("/")[0];
 	  
@@ -129,6 +132,7 @@ th, td {
  
         Class.forName( "com.mysql.jdbc.Driver");
         conn=DriverManager.getConnection(jdbcUrl,dbId ,dbPass );
+        //DB 연동 insert 쿼리
         String sql = "insert into apply_table(human_name,time_s,building_name,building_sub_name,text,sysName,orgName) values (?,?,?,?,?,?,?)";
         pstmt = conn.prepareStatement(sql);
         

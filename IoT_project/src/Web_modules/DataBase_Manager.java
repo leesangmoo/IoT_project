@@ -49,7 +49,7 @@ public class DataBase_Manager {
 	}
 
 	public ArrayList<Building> getBuildingList() {
-		ArrayList<Building> devList = new ArrayList<Building>(); 
+		ArrayList<Building> bList = new ArrayList<Building>(); 
 		try {
 			ResultSet rs = null;
 			String sql = "select building_name from building_register";
@@ -57,12 +57,12 @@ public class DataBase_Manager {
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				Building dc = new Building();
-				dc.setId(rs.getString(1));
+				Building bl = new Building();
+				bl.setId(rs.getString(1));
 				
-				System.out.println(dc.toString());
+				System.out.println(bl.toString());
 				
-				devList.add(dc);
+				bList.add(bl);
 			}
 			rs.close();
 			pstmt.close();
@@ -70,7 +70,7 @@ public class DataBase_Manager {
 			System.out.println(e.getMessage());
 		}
 		
-		return devList;
+		return bList;
 	}
 	
 	public Building getbuilding(String building_name) {

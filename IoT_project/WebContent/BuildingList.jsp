@@ -1,25 +1,27 @@
 <%@page import="java.util.*, Web_modules.*, DataBase_structure.*"%>
-
+<!-- DB 값을 가져오기 위한 java 패키지 import -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 
 <%
+	//데이터베이스 연동을 위한 객체 생성
 	DataBase_Manager dbm = new DataBase_Manager();
-
+	//db 연결
 	dbm.connect();
-
+	//db 테이블의 내용을 ArrayList로 저정함
 	ArrayList<Building> BList = dbm.getBuildingList();
-	
+	//연결 끊음
 	dbm.disconnect();
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<!-- 외부 css 파일-->
 <link href="All.css" rel="stylesheet" type="text/css">
 <style>
-table {
+table { /*테이블 크기와 위치 설정*/
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -27,7 +29,7 @@ table {
 	border-collapse: collapse;
 }
 
-th, td {
+th, td { /* th , td 의 크기와 글자 위치 설정*/
 	border: 1px solid #444444;
 	padding: 5px;
 	text-align: center;
@@ -87,22 +89,18 @@ th, td {
 				<th>건물명</th>
 				<th>시설보수 신청 현황</th>
 			</tr>
-			<tbody>
 				<%
-					for(int i=0; i<BList.size(); i++) {
-						Building bd = BList.get(i); 
+					for(int i=0; i<BList.size(); i++) {//DB 테이블 값 사이즈 만큼 반복
+						Building bd = BList.get(i); // DB 값을 불러와 저장함
 				%>
 				<tr>
-					<td><%= bd.getId() %></td>
-					<%-- <td>
-						<button type="button"
-							onclick="location.href='Jsontest1.jsp?id=<%=dc.getId()%>'">Add</button>
-					</td>
-					--%>
+					<td><%= bd.getId() %></td> <!--db 값 <td> 에 넣음 -->
+					
 					<td>
+					<!--GET 방식으로 status.jsp 페이지에 id 값을 넘겨서 이동함-->
 						<button type="button"
-							onclick="location.href='Status.jsp?id=<%=bd.getId()%>'">시설보수
-							신청 현황</button>
+							onclick="location.href='Status.jsp?id=<%=bd.getId()%>'">
+							시설보수신청 현황</button>
 					</td>
 				</tr>
 
@@ -110,8 +108,6 @@ th, td {
 					}
 				%>
 
-
-			</tbody>
 		</table>
 	</form>
 </body>

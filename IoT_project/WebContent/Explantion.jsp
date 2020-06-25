@@ -50,14 +50,17 @@
 	<form name='myform' action="db2.jsp" method="post">
 		<center>
 
-			<header> <section id="top"> <img src="camlogo.PNG"
+			<header> 
+			<section id="top"> 
+			<img src="camlogo.PNG"
 				width="100px" height="70px" align="left">
 			<h1>군산대학교 시설과 주요업무</h1>
 			</section> <nav id="main_menu">
 			<ul>
 				<li><a href="javascript:goBack();">뒤로 가기</a></li>
 			</ul>
-			</nav> </header>
+			</nav> 
+			</header>
 
 
 			<div id="bottom">
